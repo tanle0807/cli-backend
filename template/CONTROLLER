@@ -1,0 +1,26 @@
+import { Controller, UseAuth, Req, Get, Res, Response, HeaderParams, PathParams } from '@tsed/common';
+import Joi from '@hapi/joi';
+import { Docs } from '@tsed/swagger';
+import { Request } from 'express';
+
+import { Validator } from '{{path}}/middleware/validator/Validator';
+import { VerificationJWT } from '{{path}}/middleware/auth/VerificationJWT';
+import { {{Cap}} } from '{{path}}/entity/{{Cap}}';
+import { {{Cap}}Service } from '{{path}}/services/{{Cap}}Service';
+
+@Controller("/{{controller}}")
+@Docs("docs_{{doc}}")
+export class {{Cap}}Controller {
+    constructor(private {{camel}}Service: {{Cap}}Service) { }
+
+    @Get('')
+    @UseAuth(VerificationJWT)
+    @Validator({})
+    async findAll(
+        @Req() req: Request,
+        @Res() res: Response,
+        @HeaderParams("token") token: string,
+    ) {
+
+    }
+}

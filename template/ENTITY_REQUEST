@@ -1,0 +1,15 @@
+import { JsonProperty } from "@tsed/common";
+
+import { {{capEntity}} } from '../entity/{{capEntity}}';
+
+export class {{Cap}} {
+    to{{capEntity}}(): {{capEntity}} {
+        let {{lowerEntity}} = new {{capEntity}}()
+        {{lowerEntity}}.prop = this.prop
+        return {{lowerEntity}}
+    }
+
+    @JsonProperty()
+    prop: string
+
+}

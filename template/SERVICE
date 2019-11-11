@@ -1,0 +1,11 @@
+import { Service } from "@tsed/common";
+
+import { CoreService } from "../core/services/CoreService";
+import { {{Cap}} } from "../entity/{{Cap}}";
+
+@Service()
+export class {{Cap}}Service extends CoreService {
+    public async function() {
+
+    }
+}

@@ -1,0 +1,27 @@
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { JsonProperty } from "@tsed/common";
+
+import { addPrefix } from "../util/helper"
+import CoreEntity from '../core/entity/CoreEntity';
+
+@Entity(addPrefix("{{snake}}"))
+export class {{Cap}} extends CoreEntity {
+    constructor() {
+        super()
+    }
+
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column()
+    @JsonProperty()
+    field1: string
+
+    @Column({ select: false })
+    field2: string;
+
+    @Column({ default: false })
+    @JsonProperty()
+    field3: boolean
+
+}
